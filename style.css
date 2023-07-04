@@ -5,16 +5,28 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  --bg_1:#C1C1C1;
-  --inne_grey:#D9D9D9;
-  --button_grey:#979797;
+  --bg_color:#C1C1C1;
+  --circle_button_color:#D9D9D9;
+  --circle_button_bg_color:#979797;
+  --main_button_font_color: #FFFAFA;
+  --main_button_bg_color:#a1a1a1;
+  --main_button_hover_color:#0d0d0d;
+ 
+ 
+ 
+  --dark_bg_color:#0d0d0d;
+  --dark_font_color: #b1b1b1;
+  --dark_circle_button_color:#D9D9D9;
+  --dark_circle_button_bg_color:#979797;
+  --dark_main_button_span_bg_color:#F27A0A;
+  --dark_main_button_span_hover_color:#D9D9D9;
   --shadow:  0px 7px 5px -1px rgba(94,94,94,0.69);
   
 
 
 }
-html{
-  background-color: var(--bg_1);
+body{
+  background-color: var(--bg_color);
   font-family: 'IBM Plex Mono', monospace;
 }
 img{
@@ -60,7 +72,7 @@ a{
 
 }
 .round_button{
-  background-color:var(--button_grey) ;
+  background-color:var(--circle_button_bg_color) ;
   height: 49px;
   width: 49px;
   border-radius: 100%;
@@ -71,12 +83,12 @@ a{
   align-items: center;
 }
 .round_button:hover{
-  background-color:#0d0d0d;
+  background-color:var(--main_button_hover_color);
 }
 .inner-circle{
   width: 25px;
   height: 25px;
-  background-color: var(--inne_grey);
+  background-color: var(--circle_button_color);
   border-radius: 100%;
   display: flex;
   justify-content: center;
@@ -112,16 +124,15 @@ a{
   width: 440px;
   border-radius: 50px;
   border: none;
-  background-color: var(--inne_grey);
   margin-right: 160px;
   font-size: 24px;
-  color: var(--button_grey);
+  color: var(--button_grey_bg);
   padding-left: 20px;
   outline: none;
   padding-bottom:20 ;
   font-family: 'IBM Plex Mono', monospace;
-  box-shadow: var(--shadow)
-  
+  box-shadow: var(--shadow);
+    
   }
   #ABC_button{
   width: 142px;
@@ -133,8 +144,8 @@ a{
   cursor: pointer;
   font-size: 32px;
   text-align: center;
-  background-color: #a1a1a1;
-  color: #FFFAFA;
+  background-color:var(--main_button_bg_color) ;
+  color:var(--main_button_font_color);
   font-family: 'IBM Plex Mono', monospace;
   box-shadow: var(--shadow);
   transition:300ms;
@@ -142,7 +153,7 @@ a{
 
   }
   #ABC_button:hover{
-    background-color: #0d0d0d;
+    background-color: var(--main_button_hover_color);
   }
 
   #abc_button{
@@ -155,16 +166,16 @@ a{
   cursor: pointer;
   text-align: center;
   font-size: 32px;
-  background-color: #a1a1a1;
-  color: #FFFAFA;
+  background-color: var(--main_button_bg_color);
+  color:var(--main_button_font_color);
   font-family: 'IBM Plex Mono', monospace;
   box-shadow: var(--shadow);
   transition:300ms;
 
   }
-  #abc_button:hover {
-    background-color: #0d0d0d;
-    }
+#abc_button:hover {
+   background-color: var(--main_button_hover_color);
+  }
 #round_button_bottom{
   display: flex;
   justify-content: center;
@@ -190,13 +201,6 @@ a{
   
 }
 
-
-
-
-
-
-
-
 #copyrights{
   display: flex;
   justify-content: center;
@@ -219,6 +223,101 @@ a{
   justify-self: flex-start;
   align-self:center;
   cursor: pointer;
-  
-  }
+}
 
+/* =========================== DARK MODE  ===========================*/
+body.dark{
+  background-color: var(--dark_bg_color);
+  color: var(--dark_font_color);
+  font-family: 'IBM Plex Mono', monospace;
+}
+.round_button.dark{
+  background-color:var(--dark_circle_button_bg_color) ;
+  height: 49px;
+  width: 49px;
+  border-radius: 100%;
+  margin-left: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.round_button.dark:hover{
+  background-color:var(--dark_main_button_span_hover_color);
+}
+.inner-circle.dark{
+  width: 25px;
+  height: 25px;
+  background-color:var(--circle_button_bg_color);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input.dark{
+  height: 68px;
+  width: 440px;
+  border-radius: 50px;
+  border: none;
+  background-color:var(--dark_circle_button_color) ;
+  margin-right: 160px;
+  font-size: 24px;
+  color: var(--dark_bg_color);
+  outline: none;
+  padding-bottom:20 ;
+  font-family: 'IBM Plex Mono', monospace;
+  box-shadow: none;
+  
+    
+    }
+    #ABC_button.dark{
+    width: 142px;
+    height: 60px;
+    margin-right:39px ;
+    border-radius: 50px;
+    border: none;
+    margin-top: 28px;
+    cursor: pointer;
+    font-size: 32px;
+    text-align: center;
+    background-color:var(--dark_main_button_span_bg_color) ;
+    color:var(--main_button_font_color);
+    font-family: 'IBM Plex Mono', monospace;
+    box-shadow: none;
+    transition:300ms;
+      
+  
+    }
+    #ABC_button.dark:hover{
+      background-color: var(--dark_main_button_span_hover_color);
+    }
+  
+    #abc_button.dark{
+    width: 142px;
+    height: 60px;
+    margin-right:160px ;
+    border-radius: 50px;
+    border: none;
+    margin-top: 28px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 32px;
+    background-color:var(--dark_main_button_span_bg_color) ;
+    color:var(--main_button_font_color);
+    font-family: 'IBM Plex Mono', monospace;
+    box-shadow: none;
+    transition:300ms;
+  
+    }
+    #abc_button.dark:hover {
+      background-color: var(--dark_main_button_span_hover_color);
+    }
+
+    #span_lower.dark{
+      color: var(--dark_main_button_span_bg_color);
+      font-weight: bold;
+    }
+    #span_upper.dark{
+      color: var(--dark_main_button_span_bg_color);
+      font-weight: bold;
+    }
